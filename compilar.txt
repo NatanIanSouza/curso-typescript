@@ -1,0 +1,28 @@
+Para compilarmos um código TypeScript para JS, vamos acessar o terminal e digitar 'tsc index.ts' por exemplo. 
+
+Para iniciarmos um arquivo de configuração do TS, vamos digitar no terminal 'tsc --init'.
+Isso vai criar um tsconfig.json
+
+Nesse arquivo tsconfig.json, vamos modificar os itens 'target' e 'module'.
+Em 'module' vamos colocar ESNext.
+E em 'target' vamos escolher a versão para qual nosso compilador criará o JS.
+Nesse caso vou usar o ES2022.
+
+Após isso rodar apenas um 'tsc' no terminal para compilar tudo que está no diretório.
+
+Outra configuração muito importante é a 'outDir' que define aonde nossos arquivos JS compilados serão jogados, ou seja, o caminho/diretório.
+E também o 'rootDir' que define aonde ficarão os nossos arquivos TS.
+
+Normalmente fica assim:
+"rootDir": "./src",
+"outDir": "./dist",
+
+Também é recomendado ativar o removeComments para retirar os comentários para quando compilarmos:
+"removeComments": true
+
+
+
+// Quando ocorrer um erro de Cannot redeclare block-scoped variable 'age' por ser uma variável já existente no escopo global, faça o seguinte:
+// Adicione export {} no final do seu arquivo .ts para forçar o TypeScript a tratar seu código como módulo, isolando o escopo:
+// export {};
+// Ou vc pode só trocar o nome da variável também.
